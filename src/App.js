@@ -11,6 +11,7 @@ import UpdateProfile from "./components/Auth/UpdateProfile";
 import { SignInWithEmail } from "./components/Auth/SignInWithEmail";
 import Example from "../src/components/Auth/Example";
 import UploadFile from "./uploadfile/UploadFile";
+import GoogleAuth from "./components/AuthProvider/GoogleAuth";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
                 <Route path="/sign-in-with-email" Component={SignInWithEmail} />
                 <Route path="/sign-in-email" Component={Example} />
                 <Route path="/upload-file" Component={UploadFile} />
+                <Route path="/google-auth" Component={GoogleAuth} />
 
                 <Route element={<PrivateRoute />}>
                   <Route path="/" Component={Dashboard} />

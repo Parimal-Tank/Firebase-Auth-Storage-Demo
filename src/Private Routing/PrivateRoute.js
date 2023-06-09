@@ -6,7 +6,7 @@ const PrivateRoute = ({ children }) => {
   const { currentUser } = useAuth();
   console.log("currentUser: ", currentUser);
   console.log(localStorage.getItem("emailForSignIn"));
-  if (currentUser || localStorage.getItem("emailForSignIn")) {
+  if (currentUser) {
     return <Outlet> {children} </Outlet>;
   } else {
     return <Navigate to={"/login"} />;

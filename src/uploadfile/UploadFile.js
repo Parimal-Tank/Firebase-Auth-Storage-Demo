@@ -16,24 +16,24 @@ const UploadFile = () => {
     setFile(event.target.files[0]);
   }
 
-  const handleDownload =() => { 
-
-      // `url` is the download URL for 'images/stars.jpg'
-  
-      // This can be downloaded directly:
-      const xhr = new XMLHttpRequest();
-      xhr.responseType = 'blob';
-      xhr.onload = (event) => {
-        const blob = xhr.response;
-      };
-      xhr.open('GET', url);
-      xhr.send();
-  
-      // Or inserted into an <img> element
-      // const img = document.getElementById('myimg');
-      // img.setAttribute('src', url);
-
-  }
+  // Download File From the Uploaded URl File
+  const handleDownload = () => {
+    // This can be downloaded directly:
+    const xhr = new XMLHttpRequest();
+    xhr.responseType = "blob";
+    xhr.onload = (event) => {
+      //Create an `a` tag (since it has an `href` and a `download` attribute)
+      var a = document.createElement("a");
+      a.href = window.URL.createObjectURL(xhr.response);
+      a.download = "someFileName";
+      a.style.display = "none";
+      document.body.appendChild(a);
+      a.click(); //Simulates a click event
+      const blob = xhr.response;
+    };
+    xhr.open("GET", url);
+    xhr.send();
+  };
 
   const handleUpload = () => {
     if (!file) {
