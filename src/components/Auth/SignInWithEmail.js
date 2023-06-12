@@ -15,10 +15,8 @@ export const SignInWithEmail = () => {
   const { search } = location;
 
   const [email, setEmail] = useState("");
-
   const [loginLoading, setLoginLoading] = useState(false);
   const [loginError, setLoginError] = useState("");
-
   const [infoMsg, setInfoMsg] = useState("");
 
   const [initialLoading, setInitialLoading] = useState(false);

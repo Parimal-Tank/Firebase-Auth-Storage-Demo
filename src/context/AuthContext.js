@@ -19,9 +19,6 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   const signup = (email, password) => {
-    console.log("email: ", email);
-    console.log("password: ", password);
-
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
@@ -46,6 +43,7 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    // This is used for users status checked
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
       setLoading(false);

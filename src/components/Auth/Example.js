@@ -8,7 +8,6 @@ import {
 import { useNavigate } from "react-router-dom";
 
 // This is Working Fine Wite the Sign with Email
-// When ever we require we need to handle routing and  spacifically handle the private routing
 // The Flow is store the email to the in locale storage
 
 export default function SignIn() {
@@ -37,11 +36,6 @@ export default function SignIn() {
     }
   };
 
-  /**
-   * The React.ChangeEvent<HTMLInputElement> is from typescript and just shows
-   * what value is getting passed in, so you dont have to remember
-   * in this case its a "ChangeEvent" coming from "onChange"
-   */
   const updateEmail = (e) => {
     clearError();
     setEmail(e.target.value);

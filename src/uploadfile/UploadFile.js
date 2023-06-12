@@ -23,6 +23,7 @@ const UploadFile = () => {
     xhr.responseType = "blob";
     xhr.onload = (event) => {
       //Create an `a` tag (since it has an `href` and a `download` attribute)
+      //This is Used for the downloading file from the uploading url
       var a = document.createElement("a");
       a.href = window.URL.createObjectURL(xhr.response);
       a.download = "someFileName";
