@@ -36,3 +36,12 @@
   font-size: 14px;
   letter-spacing: 0.2px;
 }
+
+.githubButton {
+  text-transform: none;
+  color: black;
+  border: 1px solid #4078c0;
+  &:hover {
+    background-color: "#EEEEEE";
+  }
+}

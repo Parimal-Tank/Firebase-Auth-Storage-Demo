@@ -6,8 +6,12 @@ import {
 } from "firebase/auth";
 import { auth } from "../../firebase/firebaseConfig";
 import { useNavigate } from "react-router-dom";
+import PhoneNumber from "../Auth/PhoneNumber";
+import { AiFillPhone } from "react-icons/ai";
 
 const AuthProviders = () => {
+  const [showPhone, setShowPhone] = React.useState(false);
+
   const googleAuthProvider = new GoogleAuthProvider();
   const githubAuthProvider = new GithubAuthProvider();
   const navigate = useNavigate();
@@ -73,6 +77,22 @@ const AuthProviders = () => {
       </button>
 
       <button onClick={signUpWithGithub}>Github</button>
+      <br />
+
+      <button
+        variant={showPhone ? "contained" : "outlined"}
+        color="primary"
+        fullWidth
+        startIcon={<AiFillPhone />}
+        size="large"
+        className="githubButton"
+        onClick={() => setShowPhone(!showPhone)}
+      >
+        Login with Phone
+      </button>
+      <br />
+      <br />
+      {showPhone && <PhoneNumber />}
     </div>
   );
 };
